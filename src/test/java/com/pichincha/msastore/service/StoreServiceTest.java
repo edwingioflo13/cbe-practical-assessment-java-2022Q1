@@ -28,22 +28,7 @@ class StoreServiceTest {
     @Autowired
     private StoreService storeService;
 
-    @Test
-    void saveStore() {
-        //given
-        StoreDto storeExpected = DataUtil.generateStoreDto();
 
-        //when
-        when(storeRepository.save(any())).thenReturn(Optional.of(DataUtil.generateStore()));
-
-        //then
-        StoreDto response = storeService.saveStore(DataUtil.generateStoreDto());
-
-        assertThat(response.getName(), equalTo(storeExpected.getName()));
-        assertThat(response.getId(), equalTo(storeExpected.getId()));
-        assertThat(response.getCategory(), equalTo(storeExpected.getCategory()));
-        assertThat(response.getOwnerId(), equalTo(storeExpected.getOwnerId()));
-    }
 
     @Test
     void getStore() {
@@ -63,24 +48,6 @@ class StoreServiceTest {
 
     }
 
-    @Test
-    void updateStore() {
-        //given
-        StoreDto storeExpected = DataUtil.generateStoreDto();
 
-        //when
-        when(storeRepository.save(any())).thenReturn(Optional.of(DataUtil.generateStore()));
 
-        //then
-        StoreDto response = storeService.updateStore(DataUtil.generateStoreDto());
-
-        assertThat(response.getName(), equalTo(storeExpected.getName()));
-        assertThat(response.getId(), equalTo(storeExpected.getId()));
-        assertThat(response.getCategory(), equalTo(storeExpected.getCategory()));
-        assertThat(response.getOwnerId(), equalTo(storeExpected.getOwnerId()));
-    }
-
-    @Test
-    void deleteStore() {
-    }
 }
