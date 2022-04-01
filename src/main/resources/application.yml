@@ -1,0 +1,27 @@
+properties:
+  base-path: /api/v1/management/
+  products:
+    uri: https://253b6042-ec17-4ee8-8d7d-ea9d62805337.mock.pstmn.io/dummy-products
+spring:
+  datasource:
+    url: jdbc:h2:file:~/testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-ui
+  sql:
+    init:
+      mode: always
+server:
+  port: 8080
